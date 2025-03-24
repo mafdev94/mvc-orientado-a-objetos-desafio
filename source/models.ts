@@ -13,8 +13,8 @@ class ContactsCollection {
   data: Contact[] = [];
 
   load() {
-    const rawData = readFileSync("contacts.json", "utf-8");
-    this.data = JSON.parse(rawData);
+    const rawData = readFileSync("source/contacts.json");
+    this.data = rawData;
   }
 
   getAll() {
@@ -26,7 +26,7 @@ class ContactsCollection {
   }
 
   save() {
-    writeFileSync("contacts.json", JSON.stringify(this.data, null, 2));
+    writeFileSync("source/contacts.json", this.data);
   }
 
   getOneById(id: number) {
