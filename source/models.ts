@@ -26,7 +26,8 @@ class ContactsCollection {
   }
 
   save() {
-    writeFileSync("source/contacts.json", this.data);
+    // writeFileSync("contacts.json", this.data);
+    writeFileSync(__dirname + "/contacts.json", this.data, { spaces: 2 });
   }
 
   getOneById(id: number) {
